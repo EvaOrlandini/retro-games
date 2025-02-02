@@ -1,0 +1,16 @@
+.card-img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.card-img:hover {
+  transform: translateY(-10px);
+}
+
+.cards-container {
+  min-height: 140px;
+  padding: 10px;
+}

@@ -1,0 +1,40 @@
+<h1>Longest Word Game</h1>
+
+<%= link_to "Retour aux jeux", root_path, class: "btn btn-secondary" %>
+
+<%= form_with(url: new_path, method: :post, local: true) do |f| %>
+  <%= f.submit "Nouvelle partie", class: "btn btn-primary" %>
+<% end %>
+
+<div id="grid" class="d-flex flex-row mt-4">
+  <% @letters.each do |letter| %>
+    <div class="letter"><%= letter.capitalize %></div>
+  <% end%>
+</div>
+
+<div id="game-form">
+  <form action="/score" method="POST" data-controller="longest_word" data-action="submit->longest_word#checkWord">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="input-group">
+      <input type="text" name="word" class="form-control">
+      <input type="submit" value="Play" class="btn btn-primary">
+    </div>
+  </form>
+</div>
+
+<div class="mt-4">
+  <h1>Result</h1>
+
+  <% if @included %>
+    <% if @english_word %>
+      <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+    <% else %>
+      <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+    <% end %>
+  <% else %>
+    <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></p>
+  <% end %>
+
+  <%= link_to "Play again", new_path %>
+</div>

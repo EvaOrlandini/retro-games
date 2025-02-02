@@ -1,0 +1,30 @@
+.retro {
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	text-transform: uppercase;
+  }
+
+.btn{
+  background: #005800;
+  font-size: 18px;
+  width: auto;
+  height: 40px;
+  padding: 0px 5px;
+  border-radius: 0px;
+  }
+
+.btn:focus, .btn:hover {
+  background: #006800;
+  border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+  color: white;
+
+}

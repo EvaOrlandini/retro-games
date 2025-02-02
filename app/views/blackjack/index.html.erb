@@ -1,0 +1,44 @@
+<section class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+  <h1 class="m-0">Black Jack Game</h1>
+
+  <div class="game-status d-flex flex-row gap-3 w-100 px-5">
+    <div class="player-status mx-auto border border-2 px-2">
+      <p class="m-0">Vos cartes :</p>
+      <div class="cards-container d-flex gap-2">
+        <% @player_cards&.each do |card| %>
+          <%= image_tag "cards/#{card}.png", class: "card-img", alt: card %>
+        <% end %>
+      </div>
+      <p class="m-0">Votre score : <%= @player_score %></p>
+    </div>
+    <div class="player-status mx-auto border border-2 px-2">
+      <p class="m-0">Cartes du banquier:</p>
+      <div class="cards-container d-flex gap-2">
+        <% @bank_cards&.each do |card| %>
+          <%= image_tag "cards/#{card}.png", class: "card-img", alt: card %>
+        <% end %>
+      </div>
+      <p class="m-0">Score du banquier: <%= @bank_score %></p>
+    </div>
+  </div>
+
+<% if @result == nil %>
+  <div class="game-options d-flex flex-row gap-3">
+    <%= form_with(url: new_card_path, method: :post, local: true) do |f| %>
+      <%= f.submit "Nouvelle carte", class: "btn retro" %>
+    <% end %>
+    <%= form_with(url: bank_new_card_path, method: :post, local: true) do |f| %>
+      <%= f.submit "Rester", class: "btn retro" %>
+    <% end %>
+  </div>
+<% else %>
+    <p><%= @result.upcase %></p>
+<% end %>
+  <div class="game-options d-flex flex-row gap-3">
+    <%= form_with(url: start_game_path, method: :post, local: true) do |f| %>
+      <%= f.submit "Nouvelle partie", class: "btn retro" %>
+    <% end %>
+
+    <%= link_to "Retour aux jeux", root_path, class: "btn retro" %>
+  </div>
+</section>

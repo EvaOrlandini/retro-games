@@ -1,0 +1,48 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-family: 'VT323', monospace;
+  margin: 0;
+  padding-top: 100px;
+  height: 100vh;
+  background-image: url('/assets/computer-screen.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(64, 64, 64);
+  overflow: hidden;
+  color: white;
+  font-size: 20px;
+}
+
+.container {
+ width: 600px;
+ height: 440px;
+ text-align: center;
+ margin: 0 auto;
+ padding: 10px 0px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ overflow: scroll;
+}
+
+h1{
+ color: white;
+ text-transform: uppercase;
+ font-size: 62px;
+ font-family: 'VT323', monospace;
+}
+
+.buttons-container{
+ display: flex;
+ margin-top: 20px;
+ width: 300px;
+ justify-content: space-between;
+}
+
+/* Import des composants */
+@import "components/button";
