@@ -1,0 +1,51 @@
+<section class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+
+  <h1 class="text-center m-0">Wagon Race</h1>
+  <hr>
+  <div class="mb-3">
+  <p class="m-0">player 1 press Q</p>
+  <p class="m-0">player 2 press P</p>
+  </div>
+  <!-- You race HTML code here -->
+  <table class="racer-table">
+    <tr id="player1-race">
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="final"></td>
+    </tr>
+    <tr id="player2-race">
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="final"></td>
+    </tr>
+  </table>
+  <hr>
+  <p class="winner"></p>
+  <div class="button">
+  <button class="btn retro">Start again</button>
+  <%= link_to "Back to games", root_path, class: "btn retro" %>
+  </div>
+  <%= javascript_include_tag "wagon_race" %>
+</section>

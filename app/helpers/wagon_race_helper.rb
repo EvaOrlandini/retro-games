@@ -1,0 +1,2 @@
+module WagonRaceHelper
+end

@@ -1,40 +1,42 @@
-<h1>Longest Word Game</h1>
+<section class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+  <h1>Longest Word Game</h1>
 
-<%= link_to "Retour aux jeux", root_path, class: "btn btn-secondary" %>
+<div class="w-100">
+  <div id="grid" class="d-flex flex-row justify-content-between px-4">
+    <% @letters.each do |letter| %>
+      <div class="letter border border-2"><%= letter.capitalize %></div>
+    <% end%>
+  </div>
 
-<%= form_with(url: new_path, method: :post, local: true) do |f| %>
-  <%= f.submit "Nouvelle partie", class: "btn btn-primary" %>
-<% end %>
-
-<div id="grid" class="d-flex flex-row mt-4">
-  <% @letters.each do |letter| %>
-    <div class="letter"><%= letter.capitalize %></div>
-  <% end%>
+  <div id="game-form">
+    <form action="/score" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>
+      <div class="input-group w-50 mx-auto mt-4">
+        <input type="text" name="word" class="form-control rounded-0">
+        <input type="submit" value="Play" class="btn retro rounded-0">
+      </div>
+    </form>
+  </div>
 </div>
-
-<div id="game-form">
-  <form action="/score" method="POST" data-controller="longest_word" data-action="submit->longest_word#checkWord">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= hidden_field_tag :letters, @letters %>
-    <div class="input-group">
-      <input type="text" name="word" class="form-control">
-      <input type="submit" value="Play" class="btn btn-primary">
+  <% if @word %>
+    <div class="mt-4">
+      <h1>Result</h1>
+      <% if @included %>
+        <% if @english_word %>
+          <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+        <% else %>
+          <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+        <% end %>
+      <% else %>
+        <p>Sorry but <strong><%= @word %></strong> can't be built out of this letters</p>
+      <% end %>
     </div>
-  </form>
-</div>
-
-<div class="mt-4">
-  <h1>Result</h1>
-
-  <% if @included %>
-    <% if @english_word %>
-      <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
-    <% else %>
-      <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
-    <% end %>
-  <% else %>
-    <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></p>
   <% end %>
-
-  <%= link_to "Play again", new_path %>
-</div>
+  <div class="d-flex flex-row gap-3">
+    <%= link_to "Back to games", root_path, class: "btn retro" %>
+    <%= form_with(url: new_path, method: :post, local: true) do |f| %>
+      <%= f.submit "Start again", class: "btn retro" %>
+    <% end %>
+  </div>
+</section>

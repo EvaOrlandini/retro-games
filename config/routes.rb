@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   # Longest Word
   get 'longest_word', to: 'longest_word#index'
   post '/new', to: 'longest_word#new'
-  post "score", to: "longest_word#score"
+  post "/score", to: "longest_word#score"
+  # Wagon Race
+  get 'wagon_race', to: 'wagon_race#index'
 end

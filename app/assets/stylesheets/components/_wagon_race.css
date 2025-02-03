@@ -1,0 +1,40 @@
+.racer-table td {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+
+.racer-table td.active {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#player1-race td.active {
+  background-image: url('/assets/race/player_1.png');
+}
+
+#player2-race td.active {
+  background-image: url('/assets/race/player_2.png');
+}
+
+.final{
+  background-image: url('/assets/race/finish.png');
+  background-size: cover;
+}
+
+.winner{
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+button{
+  background-color: blue;
+  text-decoration: none;
+  color: white;
+}
+
+.button{
+  width: 100%;
+  text-align: center;
+}

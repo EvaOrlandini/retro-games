@@ -8,8 +8,8 @@ class LongestWordController < ApplicationController
   VOWELS = %w(A E I O U Y)
 
   def new
-    @letters = Array.new(10) { VOWELS.sample }
-    @letters += Array.new(10) { (('A'..'Z').to_a - VOWELS).sample }
+    @letters = Array.new(5) { VOWELS.sample }
+    @letters += Array.new(5) { (('A'..'Z').to_a - VOWELS).sample }
     @letters.shuffle!
     save_to_session
     render :index
@@ -21,10 +21,7 @@ class LongestWordController < ApplicationController
     @included = included?(@word, @letters)
     @english_word = english_word?(@word)
 
-    respond_to do |format|
-      format.html
-      format.text { render partial: "games/result", formats: [:html], layout: false }
-    end
+    render :index
   end
 
   private

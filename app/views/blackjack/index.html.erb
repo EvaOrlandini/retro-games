@@ -25,10 +25,10 @@
 <% if @result == nil %>
   <div class="game-options d-flex flex-row gap-3">
     <%= form_with(url: new_card_path, method: :post, local: true) do |f| %>
-      <%= f.submit "Nouvelle carte", class: "btn retro" %>
+      <%= f.submit "New card", class: "btn retro" %>
     <% end %>
     <%= form_with(url: bank_new_card_path, method: :post, local: true) do |f| %>
-      <%= f.submit "Rester", class: "btn retro" %>
+      <%= f.submit "Stand", class: "btn retro" %>
     <% end %>
   </div>
 <% else %>
@@ -36,9 +36,9 @@
 <% end %>
   <div class="game-options d-flex flex-row gap-3">
     <%= form_with(url: start_game_path, method: :post, local: true) do |f| %>
-      <%= f.submit "Nouvelle partie", class: "btn retro" %>
+      <%= f.submit "Start again", class: "btn retro" %>
     <% end %>
 
-    <%= link_to "Retour aux jeux", root_path, class: "btn retro" %>
+    <%= link_to "Back to games", root_path, class: "btn retro" %>
   </div>
 </section>
