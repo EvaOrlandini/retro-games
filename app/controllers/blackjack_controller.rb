@@ -33,12 +33,16 @@ class BlackjackController < ApplicationController
   end
 
   def new_card
-    @deck = session[:deck]
-    @player_cards.push(@deck.pop)
-    @player_score = @player_cards.map { |card| CARDS[card] }.sum
-    end_game if @player_score > 21
-    save_to_session
-    render :index
+    if session[:deck].nil? || session[:deck].empty?
+      start_game  # Si pas de partie en cours, on en démarre une nouvelle
+    else
+      initialize_game_state
+      @player_cards.push(@deck.pop)
+      @player_score = @player_cards.map { |card| CARDS[card] }.sum
+      end_game if @player_score > 21
+      save_to_session
+      render :index
+    end
   end
 
   def bank_new_card
@@ -73,6 +77,7 @@ class BlackjackController < ApplicationController
     @player_score = session[:player_score] || 0
     @bank_score = session[:bank_score] || 0
     @result = session[:result] || nil
+    @deck = session[:deck] || []
   end
 
   def save_to_session
@@ -81,5 +86,6 @@ class BlackjackController < ApplicationController
     session[:player_score] = @player_score
     session[:bank_score] = @bank_score
     session[:result] = @result
+    session[:deck] = @deck
   end
 end
