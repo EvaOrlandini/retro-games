@@ -1,8 +1,8 @@
 .retro {
-	border-bottom: 6px inset rgba(0,0,0,.5);
-	border-left: 6px inset rgba(0,0,0,.5);
-	border-right: 6px inset rgba(255,255,255,.5);
-	border-top: 6px inset rgba(255,255,255,.5);
+	border-bottom: 5px inset rgba(0,0,0,.5);
+	border-left: 5px inset rgba(0,0,0,.5);
+	border-right: 5px inset rgba(255,255,255,.5);
+	border-top: 5px inset rgba(255,255,255,.5);
 	box-sizing: border-box;
 	color: white;
 	cursor: pointer;
@@ -11,7 +11,6 @@
   }
 
 .btn{
-  background: #005800;
   font-size: 18px;
   width: auto;
   height: 40px;
@@ -19,12 +18,45 @@
   border-radius: 0px;
   }
 
-.btn:focus, .btn:hover {
-  background: #006800;
-  border-bottom: 6px inset rgba(0,0,0,.5);
-	border-left: 6px inset rgba(0,0,0,.5);
-	border-right: 6px inset rgba(255,255,255,.5);
-	border-top: 6px inset rgba(255,255,255,.5);
+.btn-secondary:focus, .btn-secondary:hover {
+  border-bottom: 5px inset rgba(0,0,0,.5);
+	border-left: 5px inset rgba(0,0,0,.5);
+	border-right: 5px inset rgba(255,255,255,.5);
+	border-top: 5px inset rgba(255,255,255,.5);
   color: white;
 
+}
+
+.btn-primary:focus, .btn-primary:hover {
+  border-bottom: 7px inset rgba(0,0,0,.5);
+	border-left: 7px inset rgba(0,0,0,.5);
+	border-right: 7px inset rgba(255,255,255,.5);
+	border-top: 7px inset rgba(255,255,255,.5);
+  color: white;
+
+}
+
+.red{
+  background-color: #881400;
+}
+
+.red:hover{
+  background-color: #A81000;
+}
+
+.green{
+  background-color: #005800;
+  ;
+}
+
+.green:hover{
+  background-color: #006800;
+}
+
+.blue{
+  background-color: #0000BC;
+}
+
+.blue:hover{
+  background-color: #0000FC;
 }

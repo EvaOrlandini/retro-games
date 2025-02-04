@@ -1,9 +1,9 @@
-<div class="container">
-  <h1 class="text-center mb-4">Nos Jeux</h1>
-
-  <div class="d-flex flex-column justify-content-center gap-3">
-    <%= link_to "Blackjack", blackjack_path, class: "btn retro" %>
-    <%= link_to "Longest Word", longest_word_path, class: "btn retro" %>
-    <%= link_to "Wagon Race", wagon_race_path, class: "btn retro" %>
+<section>
+  <h1 class="text-center blink mb-0">Nos Jeux</h1>
+  <div class="h-100 d-flex flex-column justify-content-center align-items-center gap-4">
+    <p class="text-center typewriter ">Select a game to play :</p>
+    <%= link_to "Blackjack", blackjack_path, class: "btn btn-primary retro red w-50" %>
+    <%= link_to "Longest Word", longest_word_path, class: "btn btn-primary retro green w-50" %>
+    <%= link_to "Wagon Race", wagon_race_path, class: "btn btn-primary retro blue w-50" %>
   </div>
-</div>
+</section>

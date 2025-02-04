@@ -7,7 +7,7 @@
   <p class="m-0">player 2 press P</p>
   </div>
   <!-- You race HTML code here -->
-  <table class="racer-table">
+  <table class="racer-table mx-4">
     <tr id="player1-race">
       <td class="active"></td>
       <td></td>
@@ -44,8 +44,8 @@
   <hr>
   <p class="winner"></p>
   <div class="button">
-  <button class="btn retro">Start again</button>
-  <%= link_to "Back to games", root_path, class: "btn retro" %>
+    <button class="btn btn-secondary retro green">Start again</button>
+    <%= link_to "Back to games", root_path, class: "btn btn-secondary retro red" %>
   </div>
   <%= javascript_include_tag "wagon_race" %>
 </section>

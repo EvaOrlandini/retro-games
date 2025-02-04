@@ -2,7 +2,7 @@
   <h1>Longest Word Game</h1>
 
 <div class="w-100">
-  <div id="grid" class="d-flex flex-row justify-content-between px-4">
+  <div id="grid" class="d-flex flex-row justify-content-center mx-auto px-4 w-75 flex-wrap gap-3">
     <% @letters.each do |letter| %>
       <div class="letter border border-2"><%= letter.capitalize %></div>
     <% end%>
@@ -14,14 +14,14 @@
       <%= hidden_field_tag :letters, @letters %>
       <div class="input-group w-50 mx-auto mt-4">
         <input type="text" name="word" class="form-control rounded-0">
-        <input type="submit" value="Play" class="btn retro rounded-0">
+        <input type="submit" value="Play" class="btn btn-secondary retro blue rounded-0">
       </div>
     </form>
   </div>
 </div>
   <% if @word %>
-    <div class="mt-4">
-      <h1>Result</h1>
+    <div class="mt-4 uppercase">
+      <h3>RESULT :</h3>
       <% if @included %>
         <% if @english_word %>
           <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
@@ -34,9 +34,9 @@
     </div>
   <% end %>
   <div class="d-flex flex-row gap-3">
-    <%= link_to "Back to games", root_path, class: "btn retro" %>
     <%= form_with(url: new_path, method: :post, local: true) do |f| %>
-      <%= f.submit "Start again", class: "btn retro" %>
+      <%= f.submit "Start again", class: "btn btn-secondary retro green" %>
     <% end %>
+    <%= link_to "Back to games", root_path, class: "btn btn-secondary retro red" %>
   </div>
 </section>

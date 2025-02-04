@@ -1,7 +1,6 @@
 .racer-table td {
   height: 50px;
   width: 50px;
-  background-color: white;
 }
 
 .racer-table td.active {
