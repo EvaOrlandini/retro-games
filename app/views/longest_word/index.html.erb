@@ -14,7 +14,7 @@
       <%= hidden_field_tag :letters, @letters %>
       <div class="input-group w-50 mx-auto mt-4">
         <input type="text" name="word" class="form-control rounded-0">
-        <input type="submit" value="Play" class="btn btn-secondary retro blue rounded-0">
+        <input type="submit" value="Play" class="button button-secondary retro blue rounded-0">
       </div>
     </form>
   </div>
@@ -35,8 +35,8 @@
   <% end %>
   <div class="d-flex flex-row gap-3">
     <%= form_with(url: new_path, method: :post, local: true) do |f| %>
-      <%= f.submit "Start again", class: "btn btn-secondary retro green" %>
+      <%= f.submit "Start again", class: "button button-secondary retro green" %>
     <% end %>
-    <%= link_to "Back to games", root_path, class: "btn btn-secondary retro red" %>
+    <%= link_to "Back to games", root_path, class: "button button-secondary retro red" %>
   </div>
 </section>
