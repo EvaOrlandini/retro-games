@@ -38,3 +38,57 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Dossiers à ignorer
+/log/*
+/tmp/*
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/storage/*
+/coverage/*
+
+# Fichiers de développement
+.env*
+.DS_Store
+.byebug_history
+
+# Base de données
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Gardez ces fichiers vides
+!log/.keep
+!tmp/.keep
+!storage/.keep
+
+# Ignorer les fichiers de log et temporaires
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignorer les fichiers de compilation d'assets
+/public/assets
+/public/packs
+/public/packs-test
+
+# Ignorer les fichiers de développement
+.env
+.env.*
+.DS_Store
+.byebug_history
+
+# Ignorer les dépendances
+/node_modules
+/yarn-error.log
+/coverage/

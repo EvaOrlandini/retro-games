@@ -38,5 +38,17 @@ module RetroGames
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Activer la compression des assets
+    config.assets.compress = true
+    config.assets.js_compressor = :uglifier
+    config.assets.css_compressor = :sass
+
+    # Désactiver la génération des assets inutilisés
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.test_framework nil
+    end
   end
 end
