@@ -1,0 +1,26 @@
+PassengerEnabled On
+PassengerAppRoot /home/u123456789/domains/votre-sous-domaine.evaorlandini.com
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Rediriger vers public/
+  RewriteCond %{THE_REQUEST} !^[A-Z]{3,}\s/public/
+  RewriteCond %{REQUEST_URI} !^/public/
+  RewriteRule ^(.*)$ public/$1 [L]
+
+  # Ne pas rediriger les fichiers/dossiers existants
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Rediriger tout le reste vers index.html
+  RewriteRule ^(.*)$ public/index.html [L]
+</IfModule>
+
+# Permissions
+<Files *>
+  Options +FollowSymLinks -Indexes
+  Order allow,deny
+  Allow from all
+</Files>

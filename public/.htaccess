@@ -1,0 +1,13 @@
+PassengerEnabled On
+PassengerAppRoot /home/u123456789/domains/votre-sous-domaine.evaorlandini.com
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  Options -MultiViews
+  RewriteBase /
+
+  # Si le fichier/dossier n'existe pas, redirige vers index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.html [QSA,L]
+</IfModule>
