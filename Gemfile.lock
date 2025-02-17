@@ -175,7 +175,6 @@ GEM
     nokogiri (1.18.2-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.1)
-    pg (1.5.9)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -297,7 +296,6 @@ DEPENDENCIES
   dotenv-rails
   importmap-rails
   jbuilder
-  pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.5)
   rails-controller-testing

@@ -2,6 +2,7 @@ services:
   - type: web
     name: retro-games
     env: ruby
+    runtime: ruby
     buildCommand: bundle install && bundle exec rake assets:precompile
     startCommand: bundle exec rails s
     envVars:
