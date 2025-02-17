@@ -1,5 +1,5 @@
 PassengerEnabled On
-PassengerAppRoot /home/u123456789/domains/votre-sous-domaine.evaorlandini.com
+PassengerAppRoot /home/u860716262/domains/evaorlandini.com/public_html/retro-games
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
