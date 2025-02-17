@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'blackjack', to: 'blackjack#index'
   post '/start_game', to: 'blackjack#start_game'
   post '/new_card', to: 'blackjack#new_card'
+  get '/bank_new_card', to: 'blackjack#bank_new_card'
   post '/bank_new_card', to: 'blackjack#bank_new_card'
   # Longest Word
   get 'longest_word', to: 'longest_word#index'

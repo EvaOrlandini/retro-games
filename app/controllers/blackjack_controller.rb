@@ -47,8 +47,8 @@ class BlackjackController < ApplicationController
 
   def bank_new_card
     until @bank_score > 21 || @bank_score > @player_score
-      @bank_cards.push(rand(1..11))
-      @bank_score = @bank_cards.sum
+      @bank_cards.push(@deck.pop)
+      @bank_score = @bank_cards.map { |card| CARDS[card] }.sum
     end
     end_game
     save_to_session
