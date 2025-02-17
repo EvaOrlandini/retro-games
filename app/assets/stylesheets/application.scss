@@ -73,7 +73,7 @@ h1{
   letter-spacing: .15em;
   max-width: fit-content;
   animation:
-    typing s steps(40, end) forwards,
+    typing 2s steps(40, end) forwards,
     blink-caret .75s step-end infinite;
 }
 
