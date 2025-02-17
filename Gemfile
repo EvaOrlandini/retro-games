@@ -65,3 +65,7 @@ gem 'rails-controller-testing', group: [ :test ]
 
 gem "dotenv-rails"
 gem "cloudinary"
+
+# Ajoutez ces gems
+gem 'sassc-rails'
+gem 'terser'  # Pour la compression JS

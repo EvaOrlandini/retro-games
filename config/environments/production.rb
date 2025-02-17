@@ -32,8 +32,8 @@ Rails.application.configure do
 
   # Activez la compression des assets
   config.assets.compress = true
-  config.assets.js_compressor = nil
-  config.assets.css_compressor = nil
+  config.assets.js_compressor = :terser
+  config.assets.css_compressor = :sass
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"

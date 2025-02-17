@@ -41,8 +41,8 @@ module RetroGames
 
     # Activer la compression des assets
     config.assets.compress = true
-    config.assets.js_compressor = :uglifier
-    config.assets.css_compressor = :sass
+    config.assets.js_compressor = :terser
+    # config.assets.css_compressor = :sass  # Retirons cette ligne
 
     # Désactiver la génération des assets inutilisés
     config.generators do |g|

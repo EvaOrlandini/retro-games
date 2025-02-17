@@ -1,0 +1,28 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+
+  &.button-primary {
+    background-color: #333;
+    color: white;
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+
+  &.retro {
+    border: 2px solid white;
+    text-transform: uppercase;
+
+    &.red { color: #ff0000; }
+    &.green { color: #00ff00; }
+    &.blue { color: #0000ff; }
+  }
+}

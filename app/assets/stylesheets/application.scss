@@ -1,7 +1,9 @@
-/*
- *= require_tree .
- *= require_self
- */
+/* Import des composants */
+@import "components/button";
+@import "components/cards";
+@import "components/letters";
+@import "components/wagon_race";
+
 
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -123,5 +125,3 @@ h1{
   from, to { border-color: transparent }
   50% { border-color: white; }
 }
-/* Import des composants */
-@import "components/button";
