@@ -1,13 +1,9 @@
-/* Import des composants */
-@import "components/button";
-@import "components/cards";
-@import "components/letters";
-@import "components/wagon_race";
+/*
+ *= require_tree .
+ *= require_self
+ */
 
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body {
+ body {
   font-family: 'VT323', monospace;
   margin: 0;
   height: 100vh;
@@ -19,6 +15,10 @@ body {
   overflow: hidden;
   color: white;
   font-size: 20px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -73,7 +73,7 @@ h1{
   letter-spacing: .15em;
   max-width: fit-content;
   animation:
-    typing 2s steps(40, end) forwards,
+    typing s steps(40, end) forwards,
     blink-caret .75s step-end infinite;
 }
 
@@ -125,3 +125,5 @@ h1{
   from, to { border-color: transparent }
   50% { border-color: white; }
 }
+/* Import des composants */
+@import "components/button";
